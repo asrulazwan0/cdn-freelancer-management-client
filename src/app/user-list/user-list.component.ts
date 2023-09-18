@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from '../user.service';
 import { User } from '../user.model';
 
@@ -17,7 +18,7 @@ export class UserListComponent implements OnInit {
   ];
   users: User[] = [];
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit() {
     this.userService.getUsers().subscribe({
@@ -28,5 +29,9 @@ export class UserListComponent implements OnInit {
         console.error('Error fetching users:', error);
       },
     });
+  }
+
+  addUser() {
+    this.router.navigate(['/users/add']);
   }
 }

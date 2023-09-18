@@ -1,0 +1,41 @@
+<mat-card>
+  <mat-card-content>
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+
+    <form [formGroup]="userForm" class="form">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Username</mat-label>
+        <input matInput formControlName="username" placeholder="Username" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" placeholder="Email" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Phone Number</mat-label>
+        <input
+          matInput
+          formControlName="phoneNumber"
+          placeholder="Phone Number"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Skillsets (comma-separated)</mat-label>
+        <input matInput formControlName="skillsets" placeholder="Skillsets" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Hobby</mat-label>
+        <input matInput formControlName="hobby" placeholder="Hobby" />
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" (click)="editUser()">Submit</button>
+      <button mat-raised-button color="warn" (click)="cancel()">Cancel</button>
+    </form>
+  </mat-card-content>
+</mat-card>

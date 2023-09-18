@@ -15,6 +15,7 @@ export class UserListComponent implements OnInit {
     'phoneNumber',
     'skillsets',
     'hobby',
+    'actions',
   ];
   users: User[] = [];
 
@@ -33,5 +34,9 @@ export class UserListComponent implements OnInit {
 
   addUser() {
     this.router.navigate(['/users/add']);
+  }
+
+  editUser(user: User) {
+    this.router.navigate(['/users/edit', user.id]);
   }
 }

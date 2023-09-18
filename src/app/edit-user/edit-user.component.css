@@ -18,7 +18,22 @@ button {
   margin-right: 1em;
 }
 
+.delete-button {
+  float: right;
+  margin-right: unset;
+}
+
 .error-message {
   color: red;
   margin-bottom: 1em;
+}
+
+.snackbar-success {
+  background-color: green;
+  color: white;
+}
+
+.snackbar-error {
+  background-color: red;
+  color: white;
 }

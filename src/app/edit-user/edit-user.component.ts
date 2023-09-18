@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
 import { UserService } from '../user.service';
+import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 
 @Component({
   selector: 'app-edit-user',
@@ -19,7 +21,8 @@ export class EditUserComponent implements OnInit {
     private userService: UserService,
     private router: Router,
     private route: ActivatedRoute,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    public dialog: MatDialog
   ) {
     this.userId = this.route.snapshot.params['id'];
 
@@ -79,6 +82,36 @@ export class EditUserComponent implements OnInit {
           verticalPosition: 'top',
         });
       },
+    });
+  }
+
+  deleteUser() {
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent);
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (!result) {
+        return;
+      }
+
+      this.userService.deleteUser(this.userId).subscribe({
+        next: (data) => {
+          this.snackBar.open('Success: User deleted', 'Close', {
+            duration: 5000,
+            panelClass: ['success-snackbar'],
+            horizontalPosition: 'center',
+            verticalPosition: 'top',
+          });
+          this.router.navigate(['/users']);
+        },
+        error: (error) => {
+          this.snackBar.open(`Error: ${error.error.message}`, 'Close', {
+            duration: 5000,
+            panelClass: ['error-snackbar'],
+            horizontalPosition: 'center',
+            verticalPosition: 'top',
+          });
+        },
+      });
     });
   }
 }

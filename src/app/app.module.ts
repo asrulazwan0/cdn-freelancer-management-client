@@ -10,6 +10,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +18,7 @@ import { UserListComponent } from './user-list/user-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddUserComponent } from './add-user/add-user.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
+import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { EditUserComponent } from './edit-user/edit-user.component';
     UserListComponent,
     AddUserComponent,
     EditUserComponent,
+    ConfirmationDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,8 @@ import { EditUserComponent } from './edit-user/edit-user.component';
     MatFormFieldModule,
     MatCardModule,
     MatSnackBarModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

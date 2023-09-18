@@ -35,7 +35,8 @@
       </mat-form-field>
 
       <button mat-raised-button color="primary" (click)="editUser()">Submit</button>
-      <button mat-raised-button color="warn" (click)="cancel()">Cancel</button>
+      <button mat-raised-button color="accent" type="button" (click)="cancel()">Cancel</button>
+      <button mat-raised-button color="warn" type="button" class="delete-button" (click)="deleteUser()">Delete User</button>
     </form>
   </mat-card-content>
 </mat-card>

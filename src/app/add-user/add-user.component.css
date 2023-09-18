@@ -22,3 +22,13 @@ button {
     color: red;
     margin-bottom: 1em;
 }
+
+.snackbar-success {
+  background-color: green;
+  color: white;
+}
+
+.snackbar-error {
+  background-color: red;
+  color: white;
+}

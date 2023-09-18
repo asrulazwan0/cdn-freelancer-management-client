@@ -53,6 +53,7 @@ export class AddUserComponent {
           horizontalPosition: 'center',
           verticalPosition: 'top'
         });
+        this.router.navigate(['/users']);
       },
       error: (error) => {
         this.snackBar.open(`Error: ${error.error.message}`, 'Close', {

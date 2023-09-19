@@ -1,27 +1,57 @@
-# CdnFreelancerManagementClient
+## Description
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.2.
+This is a frontend application built using [Angular CLI](https://github.com/angular/angular-cli) version 16.2.2. It serves as the user interface for our freelance management system.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+$ ng serve
+```
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+The build artifacts will be stored in the `dist/` directory.
+
+```bash
+$ ng build
+```
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Execute the unit tests via [Karma](https://karma-runner.github.io)
+
+```bash
+$ ng test
+```
 
 ## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+```bash
+$ ng e2e
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Configure API URL
+
+Before running the application, make sure to configure the API URL in the environment files located in the environments folder.
+
+```bash
+- For development, edit environments.dev.ts
+- For production, edit environments.prod.ts
+```
+
+## Server-side
+The server-side of this application can be found in a separate repository: https://github.com/asrulazwan0/cdn-freelancer-management-api
+
+## Stay in touch
+
+- Author - [Asrul Azwan](https://www.linkedin.com/in/asrul-azwan)
+- Website - [https://asrulazwan.com](https://asrulazwan.com)
+- Twitter - [@asrlazwn](https://twitter.com/asrlazwn)
+
+## License
+
+This project is licensed under the MIT License.
